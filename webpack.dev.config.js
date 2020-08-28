@@ -14,7 +14,7 @@ const webpack = require('webpack');
 
 const packageJson = require('./package.json');
 
-const config = new Configstore('garanca');
+const config = new Configstore('garancaa');
 
 /** Constants from package.json */
 
@@ -23,9 +23,9 @@ const PACKAGE_VERSION = packageJson.version;
 
 /** REQUIRED constants from Configstore (use dotenv or set them with literals) */
 
-const DEV_SERVER_PORT = config.get('DEV_SERVER_PORT');
+const DEV_SERVER_PORT = config.get('DEV_SERVER_PORT') || 3001;
 const DEV_SERVER_CHROME_CONFIG_PATH = config.get('DEV_SERVER_CHROME_CONFIG_PATH');
-const API_BASE_URI = config.get('API_BASE_URI');
+const API_BASE_URI = config.get('API_BASE_URI') || 'http://localhost:3001/json';
 // const MAPBOX_ACCESS_TOKEN = config.get('MAPBOX_ACCESS_TOKEN'); /** required for map projects */
 
 assert(DEV_SERVER_PORT, 'DEV_SERVER_PORT constant must be set (e.g. 3001). It is used to configure the Webpack dev server');
