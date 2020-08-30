@@ -7,11 +7,13 @@ import React, {
 
 import Model from '../model';
 
+import Chart from './chart';
+
 import IDatum from '../model/interfaces/datum-interface';
 
 const REGION_ID = 'BR-TO';
-
 const SERIES_ID = 'annual-deforestation-rate';
+const YEAR_RANGE: [number, number] = [2000, 2018];
 
 interface IApp {
   apiBaseUri: string;
@@ -37,7 +39,10 @@ const App:FunctionComponent<IApp> = (props: IApp) => {
 
   return (
     <div>
-      App is running.
+      <Chart
+        yearRange={YEAR_RANGE}
+        series={series}
+      />
     </div>
   );
 };
